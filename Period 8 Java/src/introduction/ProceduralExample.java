@@ -6,5 +6,8 @@ public class ProceduralExample {
       // system = class
       // out = field 
       //printIn = method of that field
-  }
+    String[] years = {"Freshmen", "Sophmore", "Junior", "Senior"};
+    String [] names = { "Josh", "Alvin", "George", "Vincent"};
+    }
+  
 }
