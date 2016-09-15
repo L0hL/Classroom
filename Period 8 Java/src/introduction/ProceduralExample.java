@@ -6,5 +6,7 @@ public class ProceduralExample {
       // system = class
       // out = field 
       //printIn = method of that field
+      String[] names = { "Ivan", "xd", "hehe" };
+	  System.out.println("Not" + names[0]);   
   }
 }
