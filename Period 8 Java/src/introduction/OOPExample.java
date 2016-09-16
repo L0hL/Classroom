@@ -8,10 +8,11 @@ public class OOPExample {
 
 	public static void main(String[] args) {
 			 
-		 Student grace = new Student("Grace");
-		 Student henry = new Student("Henry");
+		 Senior grace = new Senior("Grace"); // this is hierarchy  
+		 Student henry = new Junior("Henry");
 		 Student ivan = new Student("Ivan");
 		 grace.talk();
+		 grace.average();
 		 henry.talk();
 		 ivan.talk();
 		 
