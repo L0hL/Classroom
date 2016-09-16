@@ -1,6 +1,9 @@
 package introduction;
 
 public class ProceduralExample { 
+	public static void main(String[] args) {
+		
+	}
   public static void main(String[] args){
 
       System.out.println("Hello World");
@@ -10,11 +13,10 @@ public class ProceduralExample {
       // out = field 
       //printIn = method of that field
 
-      String[] name = { "Ivan", "xd", "hehe" };
-	  System.out.println("Not" + name[0]);   
-  }
+      String[] name = { "Ivan", "John", "Grace" };   
     String[] years = {"Freshmen", "Sophmore", "Junior", "Senior"};
-    String [] names = { "Josh", "Alvin", "George", "Vincent"};
+    System.out.println("My name is " + name[2] + " and I am a " + years[0]);
 
+  }
     }
   
