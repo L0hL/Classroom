@@ -5,13 +5,16 @@ public class RandomDiceRoll {
 	public static void main(String[] args) {
 		int[] results = new int[6]; //fill array with six 0s.
 		//declare variable. logic test increment
-		for (int index = 0; index <666; index++){
+		double totalRolls = 10000;
+		for (int index = 0; index < totalRolls; index++){
 			int result = rollUnfairDie();
 			System.out.println("roll # "+ (index+1)+ " : " +  result); // u need parenthesis for index +/- 1
 			results[result-1]++; // -1 becuz array
 		}
 		for (int i = 0; i < 6; i++){
-			System.out.println((i+1)+" appeared "+results[i]+" times.");
+			double percentage = (int) (1000 *(double)(results[i]/totalRolls) ) / 10.0;
+			System.out.println((i+1)+" appeared "+percentage+"%");
+		
 		}
 
 	}
@@ -25,7 +28,7 @@ public class RandomDiceRoll {
 		double rand = Math.random();
 		int roll = (int) (6 * rand); 
 		roll ++;
-		if (roll<6) return roll = 6 ;
+		if (roll<3) return roll = 6 ;
 		return roll;
 		
 	}
