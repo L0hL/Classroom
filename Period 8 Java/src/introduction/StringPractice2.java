@@ -56,7 +56,7 @@ public class StringPractice2 {
 	public static void createScanner(){
 		input = new Scanner(System.in);
 
-	}
+	}//kjh
 	public static void print(String s){
 		String printString = "";
 		int cutoff = 35;
