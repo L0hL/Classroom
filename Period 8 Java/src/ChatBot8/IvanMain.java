@@ -23,6 +23,7 @@ public class IvanMain {
 		while (inMainLoop) {
 			print("Hi"+ user + ". How are you?");
 			response = promptInput();
+
 		}
 		if(findkeyword(response,"good",0) >= 0){
 			print("That's wonderful. So glad you feel good.");
@@ -80,7 +81,8 @@ public class IvanMain {
 			}
 			if(before.compareTo("a")<0 && after.compareTo("a")<0 && noNegations(searchString,psn)){
 				//pos+1 is one space after current
-				return 0;
+				noNegations(searchString, psn);
+				return psn;
 			}
 			else{
 				psn = searchString.indexOf(keyword,psn+1);

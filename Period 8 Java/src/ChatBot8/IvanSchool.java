@@ -22,4 +22,17 @@ public class IvanSchool implements Chatbot{
 	}
 
 	}
+	public boolean isTriggered(String userInput){
+		String[] triggers = { "school", "class", "teacher"};
+		//
+		//
+		if(IvanMain.findkeyword(userInput, "school",0)>0){
+			return true;
+			
+		}
+		if(IvanMain.findkeyword(userInput, triggers[1], 0)>0){
+			return true;
+		}
+		return false;
+	}
 }
