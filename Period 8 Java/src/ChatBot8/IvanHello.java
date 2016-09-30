@@ -5,7 +5,7 @@ public class IvanHello implements Chatbot {
 	private String helloResponse;
 	private boolean inHelloLoop;
 	private String[] calmResponse = {"We already said hello."
-				+ "Lets move on wit the conversation."
+				+ "Lets move on with the conversation."
 	};
 	private String[] angryResponse = { "Please stop repeating yourself."
 			+ " Okay, seriously, stop saying hello."};
@@ -22,7 +22,7 @@ public class IvanHello implements Chatbot {
 			helloResponse = IvanMain.promptInput();
 			if(isTriggered(helloResponse)){
 				inHelloLoop = false;
-				IvanMain.PromptForever();
+				IvanMain.promptForever();
 			}
 		}
 		
@@ -41,13 +41,13 @@ public class IvanHello implements Chatbot {
 	}
 	@Override
 	public boolean isTriggered(String userInput) {
-		if(IvanMain.findkeyword(userInput, "hello", 0)>=0){
+		if(IvanMain.findKeyword(userInput, "hello", 0)>=0){
 			return true;
 		}
-		if(IvanMain.findkeyword(userInput, "hi", 0)>=0){
+		if(IvanMain.findKeyword(userInput, "hi", 0)>=0){
 			return true;
 		}
-		if(IvanMain.findkeyword(userInput, "hey", 0)>=0){
+		if(IvanMain.findKeyword(userInput, "hey", 0)>=0){
 			return true;
 		}
 		return false;

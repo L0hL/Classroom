@@ -13,7 +13,7 @@ public class IvanSchool implements Chatbot{
 			if(schoolResponse.indexOf("print")>= 0){
 				inSchoolLoop = false;
 				
-				IvanMain.PromptForever();
+				IvanMain.promptForever();
 			}
 			else{	
 							IvanMain.print("That my favorite part"
@@ -26,11 +26,11 @@ public class IvanSchool implements Chatbot{
 		String[] triggers = { "school", "class", "teacher"};
 		//
 		//
-		if(IvanMain.findkeyword(userInput, "school",0)>0){
+		if(IvanMain.findKeyword(userInput, "school",0)>0){
 			return true;
 			
 		}
-		if(IvanMain.findkeyword(userInput, triggers[1], 0)>0){
+		if(IvanMain.findKeyword(userInput, triggers[1], 0)>0){
 			return true;
 		}
 		return false;
