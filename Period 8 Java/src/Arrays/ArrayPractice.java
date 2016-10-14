@@ -45,6 +45,7 @@ public class ArrayPractice {
 		for(int i = 0; i<someStrings1.length;i++){
 			someStrings1[i] = "a new string"; // (when String s: someStrings1) you would had thought that this will make 
 													//someStrings1 all be called a new string.
+											//doesn't work if you make s = someStrings[i] because it is a local variable
 			
 		}
 		// a loop to print it
