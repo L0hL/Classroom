@@ -7,7 +7,7 @@ public class StringPractice {
 	static String user;
 
 	public static void main(String[] args) {
-		DemoStringMethod();
+		/*DemoStringMethod();
 		//PromptForever(); // forever asks you to type something so bottom wont load btw cuz still asking you to type something
 		String text1 = new String("Hello World");
 		String text2 = "Hello World"; // these two codes do the exact same thing.
@@ -19,15 +19,38 @@ public class StringPractice {
 		String word1 = "asdasd";
 		String word2 = "zzzzz";
 		if (word1.compareTo(word2)<0){ //use compareTo if you want to know if one comes before the other 
-			print("word1 comes before word2");
+			print("word1 comes before word2"); */
+		String user,pass = waitforentry(); // basically 
+		String fill = "asd";
+		boolean valid = false;
+		System.out.println("What is the username?");
+		if(fill.equals("test_user")){
+			for( int i = 0; i<3;i++){
+				System.out.println("you have"+(3-i)+"tries.");
+				if(pass.equals("test")){
+					valid = true;
+					break;
+				}
+			
+				else{
+					System.out.print("Invalid pass");
+				}
+			}
 		}
+		else{
+			System.out.println("invald user");}
 
+	//}
 	}
-
 	public static void PromptForever(){
 		while (true) {
 			promptInput();
 		}
+	}
+	public static String waitforentry(){
+		user = input.nextLine();
+		return user;
+		
 	}
 	public static void DemoStringMethod(){
 
@@ -42,9 +65,9 @@ public class StringPractice {
 	public static void promptName(){
 		print("enter your name.");
 		user = input.nextLine();
-		print("Glad to meet you " + user+"."
-				+ "For the rest of time, I will call you user." // \n moves down a line 
-				+ "You can call me Bob. We should become friends.");
+	//	print("Glad to meet you " + user+"."
+	//			+ "For the rest of time, I will call you user." // \n moves down a line 
+	//			+ "You can call me Bob. We should become friends.");
 	}
 	public static void promptInput(){
 		print("Please Type Something.");
