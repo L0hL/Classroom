@@ -4,24 +4,54 @@ public class ArrayPractices {
 	static boolean[] boos3;
 	
 	public static void main(String[] args) {
+		
+		listPrimes(120);
 		// how do you time a process
-		long/* integer of higher order; more info than an int*/ currentTime = System.currentTimeMillis();
-		int[] fiftyNumbers = new int[50];
-		int max = 50;
-		populate(fiftyNumbers);
+//		long/* integer of higher order; more info than an int*/ currentTime = System.currentTimeMillis();
+//		int[] fiftyNumbers = new int[50];
+//		int max = 50;
+//		populate(fiftyNumbers);
 	//	print(fiftyNumbers);
-		randomize(fiftyNumbers);
+//		randomize(fiftyNumbers);
 	//	print(fiftyNumbers);
-		RollDice(fiftyNumbers);
-		print(fiftyNumbers);
+//		RollDice(fiftyNumbers);
+//		print(fiftyNumbers);
 		//count each dice roll and provide a percentage
-		countResults(fiftyNumbers);
-		long endTime = System.currentTimeMillis();
+//		countResults(fiftyNumbers);
+//		long endTime = System.currentTimeMillis();
 
-		System.out.println("The process took "
-				+ (endTime-currentTime) + " ms.");
+//		System.out.println("The process took "
+//				+ (endTime-currentTime) + " ms.");
 		
 		
+	}
+	private static void listPrimes(int limit) {
+		int lastToCheck = (int) (Math.sqrt(limit)); // starts at 0 so if limit = 100 its actually 99.
+		boolean[] numbers = new boolean[limit+1];
+		for(int i = 0 ; i < limit +1; i++){
+			numbers[i] = true;
+		}
+		//0 and 1 are not prime
+		numbers[0] = false;
+		numbers[1] = false;
+		//ignores 0 and 1 and starts at 2
+		for(int prime = 2; prime <= lastToCheck;prime++){
+			if(numbers[prime]){
+				System.out.println("\n" + prime+" is prime."
+						+ "Crossing off:");
+				// if number is true, hasn't be crossed off
+				for(int i = (int)(Math.pow(prime, 2));
+						i<limit+1; i +=prime){
+					System.out.println(i+", ");
+					numbers[i] = false;
+				}
+			}
+		}
+		//print the primes
+		System.out.println("\nThe primes are:");
+		for(int index = 0; index<numbers.length;index++){
+			if(numbers[index])System.out.print(index+", ");
+		}
 	}
 	private static void countResults(int[] arr) {
 		int [] counter = new int[12];
