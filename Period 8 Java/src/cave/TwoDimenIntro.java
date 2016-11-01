@@ -5,30 +5,55 @@ import java.util.Arrays;
 public class TwoDimenIntro {
 
 	public static void main(String[] args) {
-		String[] xox = {"x","o","x","o","x"};
-		System.out.println(Arrays.toString(xox));
-		//a 1D array prints a horizontal string
+		String[][] pic = new String[10][8];
 		
-		String[][] arr2D = new String[5][4];
-		System.out.println("The height is "+arr2D.length);
-		System.out.println("The width is "+arr2D[0].length);
-		
-		for(int row = 0; row < arr2D.length; row++){
-			
-			//populate with coordinates
-			for(int col = 0; col < arr2D[row].length; col++){
-				arr2D[row][col] = "("+row+", "+col+")";
+		for(int row=0; row<pic.length; row++){ 
+			for(int column = 0; column<pic[row].length; column++){
+				pic[row][column] = " ";
 			}
-			
 		}
 		
-		//print the 2D array
-		//Every element in a 2D array IS itself an array,
-		//so a for-each loop looks like this:
-		for(String[] row : arr2D){
+		pic[1][3] = "O";
+		pic[1][2] = "<";
+		pic[1][4] = ">";
+		
+		pic[1][5] = "O";
+		pic[1][2] = "<";
+		pic[1][4] = ">";
+		
+		for(int row = 5; row<pic.length; row++){
+			for(int col=0; col<pic[row].length; col++){
+				pic[row][col] = "m";
+			}
+		}
+		
+		for(String[] row : pic){
+			for(String col: row){
+				System.out.print(col);
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void intro(){
+		String[] xox = {"x", "o", "x", "o", "x"};
+		System.out.println(Arrays.toString(xox));
+		
+		String[][] arr2d = new String[5][4];
+		
+		for(int row=0; row<arr2d.length; row++){ 
+			for(int column = 0; column<arr2d[row].length; column++){
+				arr2d[row][column] = "(" + row + ", " + column + ")";
+			}
+		}
+		
+		//alternative method
+//		for(int i=0; i<arr2d.length; i++){
+//			System.out.println(Arrays.toString(arr2d[i]));
+//		}
+		
+		for(String[] row : arr2d){
 			System.out.println(Arrays.toString(row));
 		}
-		
 	}
-
 }
