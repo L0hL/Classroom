@@ -7,23 +7,28 @@ public class TwoDimenIntro {
 	public static void main(String[] args) {
 		String[][] pic = new String[10][8];
 		
+		
 		for(int row=0; row<pic.length; row++){ 
 			for(int column = 0; column<pic[row].length; column++){
 				pic[row][column] = " ";
+
 			}
 		}
 		
-		pic[1][3] = "O";
-		pic[1][2] = "<";
-		pic[1][4] = ">";
-		
-		pic[1][5] = "O";
-		pic[1][2] = "<";
-		pic[1][4] = ">";
-		
-		for(int row = 5; row<pic.length; row++){
-			for(int col=0; col<pic[row].length; col++){
+		for ( int col = 0; col<pic[0].length;col++){
+			pic[0][col] = "_";
+			pic[pic.length-1][col] = "_";
+		}
+		//first and last column is a vertical line
+		for( int row = 1;row<pic.length;row++){
+			pic[row][0] = "|";
+			pic[row][pic[0].length-1] = "|";
+		}
+		for(int row = 5; row<pic.length-1; row++){
+			for(int col=0; col<pic[row].length-1; col++){
 				pic[row][col] = "m";
+
+				
 			}
 		}
 		
@@ -54,6 +59,13 @@ public class TwoDimenIntro {
 		
 		for(String[] row : arr2d){
 			System.out.println(Arrays.toString(row));
+		}
+	}
+	public static void printPic(String[][] pic){
+		for(String[] row : pic){
+			for(String col: row){
+				
+			}
 		}
 	}
 }
