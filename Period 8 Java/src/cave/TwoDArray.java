@@ -4,13 +4,19 @@ import java.util.Arrays;
 public class TwoDArray {
 
 	public static void main(String[] args) {
-		boolean [][] mines = new boolean [6][6]; // primitive array boolean its set to 0 (false)
-		plantMines(mines);
-		String[][] field = createField(mines);
-		printPic(field);
+		
+		
 	}
-	private static void printPic(String[][] field) {
-		// TODO Auto-generated method stub
+	public static void printPic(String[][] arr) {
+		for(int i = 0 ; i != arr.length;i++){
+			for ( int j = 0; j!= arr.length;j++){
+				if(arr[i][j] == null)
+					System.out.print("");
+				else
+					System.out.print(arr[i][j]);
+			}
+			System.out.println();
+		}
 		
 	}
 	private static String[][] createField(boolean[][] mines) {
@@ -23,17 +29,43 @@ public class TwoDArray {
 				}
 			}
 		}
-		return null;
+		return field;
 	}
 	private static String countNearby(boolean[][] mines, int row, int col) {
-		for( int r = row -1; r<= row + 1; r++){
-			for(int c = col -1; col<= col +1;c++){
-				if( r>= 0 && r<mines.length && c>= 0 && c< mines[0].length){
-					
-				}
-			}
-		}
-		return null;
+//		for( int r = row -1; r<= row + 1; r++){
+//			for(int c = col -1; col<= col +1;c++){
+//				if( r>= 0 && r<mines.length && c>= 0 && c< mines[0].length){
+//					
+//				}
+//			}
+//		}
+		
+		// this method only considers actual elements.
+//		int count = 0;
+//		for ( int r = 0; r<mines.length;r++){
+//			for ( int c = 0 ; c<mines[r].length;c++){
+//				if(Math.abs(r-row)+Math.abs(c-col) == 1 && mines[r][c]){
+//					count++;
+//				}
+//			}
+//		}
+//		return ""+count;
+		
+		//this method allows you to be most specific
+		//for example, you only want north and east
+		int count = 0;
+		count+= isValidAndTrue(mines,row-1,col);
+		count+= isValidAndTrue(mines,row+1,col);
+		count+= isValidAndTrue(mines,row,col-1);
+		count+= isValidAndTrue(mines,row,col+1);
+		return ""+count;
+		
+	}
+	private static int isValidAndTrue(boolean[][] mines, int i, int j) {
+		if (i>= 0 && i< mines.length && j>= 0 && j<mines[0].length && mines[i][j]) // cannot be first b/c will give out of bound exception
+				
+			return 1; 
+		else return 0;
 	}
 	private static void plantMines(boolean[][] mines){
 		int numberOfMines = 20;
