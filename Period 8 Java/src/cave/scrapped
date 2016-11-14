@@ -1,0 +1,27 @@
+package caveExplorer;
+
+public class PatternGame {
+
+	public static void main(String[] args) {
+		int [] [] arr = new int [4][4];
+		setGame(arr);
+
+	}
+
+	private static void setGame(int[][] arr) {
+		for (int row = 0; row < arr.length; row++) {
+			for (int col = 0; col < arr[row].length; col++) {
+				arr[row][col] = getRand();
+			}
+			System.out.print(arr);
+		}
+		
+	}
+
+	private static int getRand() {
+		boolean isRepeated = false;
+		int number = (int)(16*Math.random());
+		return number;
+	}
+
+}
