@@ -15,13 +15,15 @@ public class PatternGame {
 			}
 			System.out.print(arr);
 		}
-		
+		//using the array from the classwork.
 	}
-
 	private static int getRand() {
 		boolean isRepeated = false;
 		int number = (int)(16*Math.random());
 		return number;
+		//swap adjacent randomized amount of time .
+		//this doesn't work as it will result in 1/2 of the solutions unsolvable. Make it so that the randomize will always make the puzzle solvable.
 	}
+	
 
 }
