@@ -1,0 +1,47 @@
+package cave;
+
+import java.util.Scanner;
+
+
+public class Randomize {
+
+	public static void main(String[] args) {
+		int [] [] arr = { {1, 2, 3, 4} , { 5, 6, 7, 8},{ 9, 10, 11, 12},{13,14,15,16} };
+		System.out.println("You win the game if you can make the board look like"
+				+ "this.");
+		printArray(arr);
+		setGame(arr);
+		System.out.println("Here is the randomized puzzle."
+				+ "Good luck solving it.");
+		
+		printArray(arr);
+
+	}
+
+	private static void setGame(int[][] arr) {
+		for (int row = 0; row < arr.length; row++) {
+			for (int col = 0; col < arr[row].length; col++) {
+				arr[row][col] = getRand();
+			}
+			
+		}
+		//using the array from the classwork.
+	}
+	private static int getRand() {
+		boolean isRepeated = false;
+		int number = (int)(16*Math.random());
+		return number;
+		//swap adjacent randomized amount of time .
+		//this doesn't work as it will result in 1/2 of the solutions unsolvable. Make it so that the randomize will always make the puzzle solvable.
+	}
+	public static void printArray(int arr[][]){
+		for (int row = 0; row < arr.length; row++) {
+			for (int col = 0; col < arr[row].length; col++) {
+				System.out.print(arr[row][col] + " ");
+				
+			}
+			System.out.println();
+		}
+	}
+//https://www.cs.bham.ac.uk/~mdr/teaching/modules04/java2/TilesSolvability.html
+}
