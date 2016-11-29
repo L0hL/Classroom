@@ -1,5 +1,7 @@
 package Pokemon;
 
 public interface Attack {
-	public void attack(pokemon target);
-}
+
+	 
+	 public void attack(Pokemon target);
+	}

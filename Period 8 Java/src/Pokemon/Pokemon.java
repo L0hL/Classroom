@@ -1,20 +1,25 @@
 package Pokemon;
 
-public class pokemon {
+public class Pokemon {
 	private  int level,hp;
 	private  String name = "Sceptile";
 	private  boolean poisoned = true;
 
+
 public void main(String[]args){
-	
+	Pokemon squirtle = new Pokemon("Squirtle",26);
+	 Pokemon bulbasaur = new Pokemon("Bulbasaur",26);
+	 squirtle.iChooseYou();
+	 bulbasaur.iChooseYou();
 }
-public void Pokemon(String name, int level){
+
+public  Pokemon(String name, int level){
 	hp = 100;
 	this.name = name;
 	this.level = level;
 	this.poisoned = false;
 }
-public void attack(pokemon target, Attack attack){
+public void attack(Pokemon target, Attack attack){
 	if(Math.random()<.9){
 		attack.attack(target);
 		System.out.println("The attack hit");
