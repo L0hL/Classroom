@@ -1,5 +1,11 @@
 package Pokemon;
-
+//merge
+//selection
+//binary
+//insertion
+//factorial
+//time complexity
+//space complexity
 public class RecursionIntro {
 
 	public static void main(String[] args) {
