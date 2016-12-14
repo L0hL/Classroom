@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import GUIpractice.Screen;
 import GUIpractice.components.TextArea;
-
+import GUIpractice.components.TextLabel;
 import GUIpractice.components.Visible;
 
 
