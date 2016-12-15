@@ -41,7 +41,10 @@ public class Button extends TextLabel {
 		g.drawRoundRect(1, 1, getWidth() - 1 , getHeight() - 1, 25, 35);
 
 //		g.setColor(Color.black);
-		
+		if(text != null){
+			g.setFont(new Font(font,Font.PLAIN,size));
+			g.drawString(text, 4, getHeight()-5);
+		}
 		
 	}
 
