@@ -5,21 +5,22 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
+
 import GUIpractice.Screen;
 import GUIpractice.components.Action;
 import GUIpractice.components.Button;
+import GUIpractice.components.Graphics;
 import GUIpractice.components.TextArea;
 import GUIpractice.components.TextLabel;
 import GUIpractice.components.Visible;
 
-
-public class CoordinatedScreen extends Screen implements MouseMotionListener{
+public class CoordinateScreen extends Screen implements MouseMotionListener{
 
 	private TextLabel label;
 	private TextArea paragraph;
 	private Button button;
 	
-	public CoordinatedScreen(int width, int height) {
+	public CoordinateScreen(int width, int height) {
 		super(width, height);
 	}
 
@@ -30,26 +31,30 @@ public class CoordinatedScreen extends Screen implements MouseMotionListener{
 				"This is a whole paragraph. Notice how "
 				+ "as the paragraph gets to the edge"
 				+ " of the page, a new line is created.");
-//		button = new Button(40,200,80,40,"button",new Color(100,100,250), new Action());
-//		public void act();
+		button = new Button(40,200,80,40,"Button",
+				new Color(100,100,250),new Action() {
+			
+			public void act() {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		Graphics picture = new Graphics(50,50,.5,"resources/sampleImages/Penguins.jpg");
+		viewObjects.add(picture);
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
-		
-		
-		
+		viewObjects.add(button);
 	}
 
-	@Override
-	public void mouseDragged(MouseEvent e) {
+	public void mouseDragged(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public void mouseMoved(MouseEvent m) {
 		label.setText("Mouse at" + m.getX()+", "+m.getY());
-		
 	}
+	
 	public MouseMotionListener getMouseMotionListener(){
 		return this;
 	}

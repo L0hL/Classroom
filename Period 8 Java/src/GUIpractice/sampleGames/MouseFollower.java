@@ -3,19 +3,21 @@ package GUIpractice.sampleGames;
 import GUIpractice.GUIApplication;
 
 public class MouseFollower extends GUIApplication {
-
-	private CoordinatedScreen coordScreen;
-	public static void main(String args[]){
-		GUIApplication game= new MouseFollower();
+public static CoordinateScreen coordScreen;
+public static MyScreen moveScreen;
+public static MouseFollower game;
+	
+	public static void main(String[] args){
+		GUIApplication game = new MouseFollower();
 		Thread app = new Thread(game);
 		app.start();
 	}
+	
 	@Override
 	protected void initScreen() {
-		coordScreen = new CoordinatedScreen(getWidth(),getHeight());
+		coordScreen = new CoordinateScreen(getWidth(),
+				getHeight());
 		setScreen(coordScreen);
 	}
-
-	
 
 }
