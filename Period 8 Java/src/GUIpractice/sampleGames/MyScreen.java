@@ -1,21 +1,78 @@
 package GUIpractice.sampleGames;
 
+import java.awt.Color;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import GUIpractice.Screen;
+import GUIpractice.components.Action;
+import GUIpractice.components.Button;
+import GUIpractice.components.Graphics;
 import GUIpractice.components.Visible;
 
-public class MyScreen extends Screen{
+public class MyScreen extends Screen implements MouseListener{
 
+	private Graphics mario;
+	private Button back;
+	
 	public MyScreen(int width, int height) {
 		super(width, height);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
+		mario = new Graphics(200,200,.25,"resources/sampleImages/mario.png");
+		back = new Button(50,50,100,80,"Back",Color.BLACK, new Action(){
+			{
+		}
+			@Override
+			public void act() {
+				MouseFollower.game.setScreen(MouseFollower.coordScreen);		
+			}			
+		});
+
+		viewObjects.add(mario);
+		viewObjects.add(back);
+	}
+
+	public void mouseDragged(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	public void mouseMoved(MouseEvent arg0) {
+		
+	}
+
+	public void mouseClicked(MouseEvent e) {
+		if(back.isHovered(e.getX(), e.getY())){
+			back.act();
+		}
+	}
+
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public MouseListener getMouseListener(){
+		return this;
+	}
+	
 }
