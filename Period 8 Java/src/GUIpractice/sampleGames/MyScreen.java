@@ -24,15 +24,15 @@ public class MyScreen extends Screen implements MouseListener{
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		mario = new Graphics(200,200,.25,"resources/sampleImages/mario.png");
-		back = new Button(50,50,100,80,"Back",Color.BLACK, new Action(){
-			{
-		}
-			@Override
-			public void act() {
-				MouseFollower.game.setScreen(MouseFollower.coordScreen);		
-			}			
-		});
+//		mario = new Graphics(200,200,.25,"resources/sampleImages/mario.png");
+//		back = new Button(50,50,100,80,"Back",Color.BLACK, new Action(){
+//			{
+//		}
+//			@Override
+//			public void act() {
+//				MouseFollower.game.setScreen(MouseFollower.coordScreen);		
+//			}			
+//		});
 		pick = new ClickableGraphics(100,100,100,100, "resources/sampleImages/two.png");
 		pick.setAction(
 				new Action(){
@@ -40,10 +40,11 @@ public class MyScreen extends Screen implements MouseListener{
 		}
 			@Override
 			public void act() {
+			pick.setX(pick.getX() + 10);
 				
 			}			});
-		viewObjects.add(mario);
-		viewObjects.add(back);
+		//viewObjects.add(mario);
+	//	viewObjects.add(back);
 		viewObjects.add(pick);
 		
 	}
@@ -58,9 +59,10 @@ public class MyScreen extends Screen implements MouseListener{
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		if(back.isHovered(e.getX(), e.getY())){
-			back.act();
+		if(pick.isHovered(e.getX(), e.getY())){
+			pick.act();
 		}
+		
 	}
 
 	public void mouseEntered(MouseEvent e) {
