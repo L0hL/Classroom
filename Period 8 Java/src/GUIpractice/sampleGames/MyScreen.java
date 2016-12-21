@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import GUIpractice.Screen;
 import GUIpractice.components.Action;
 import GUIpractice.components.Button;
+import GUIpractice.components.ClickableGraphics;
 import GUIpractice.components.Graphics;
 import GUIpractice.components.Visible;
 
@@ -15,6 +16,7 @@ public class MyScreen extends Screen implements MouseListener{
 
 	private Graphics mario;
 	private Button back;
+	private ClickableGraphics pick;
 	
 	public MyScreen(int width, int height) {
 		super(width, height);
@@ -31,9 +33,19 @@ public class MyScreen extends Screen implements MouseListener{
 				MouseFollower.game.setScreen(MouseFollower.coordScreen);		
 			}			
 		});
-
+		pick = new ClickableGraphics(100,100,100,100, "resources/sampleImages/two.png");
+		pick.setAction(
+				new Action(){
+			{
+		}
+			@Override
+			public void act() {
+				
+			}			});
 		viewObjects.add(mario);
 		viewObjects.add(back);
+		viewObjects.add(pick);
+		
 	}
 
 	public void mouseDragged(MouseEvent arg0) {
