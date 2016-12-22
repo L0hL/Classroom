@@ -111,12 +111,9 @@ public abstract class Screen {
 	}
 	public void moveToBack(Visible v){
 		if(viewObjects.contains(v)){
-			// searches if __ contained in the list
 			viewObjects.remove(v);
-			viewObjects.add(0,v); // tells you to move it to index 0
-			//move all objects with index >= n
-			//forward by 1, increases size by 1
-			//adds object to index n
+			viewObjects.add(0,v);
+
 		}
 	}
 
@@ -130,6 +127,11 @@ public abstract class Screen {
 
 	public MouseMotionListener getMouseMotionListener() {
 		return null;
+	}
+
+	public void addObject(Visible v) {
+		viewObjects.add(v);
+		
 	}
 
 
