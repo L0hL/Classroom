@@ -141,7 +141,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 	 * @return
 	 */
 	private MoleInterface getAMole() {
-		return  new mole((int)(getWidth() * Math.random()) -100, (int) (getHeight()*Math.random()));
+		return  new Mole((int)(getWidth() * Math.random()) -100, (int) (getHeight()*Math.random()));
 	}
 
 }
