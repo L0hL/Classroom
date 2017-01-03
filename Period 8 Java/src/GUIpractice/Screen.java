@@ -47,7 +47,8 @@ public abstract class Screen {
 		g.fillRect(0, 0, image.getWidth(), image.getHeight());
 		g.setColor(Color.black);
 		//draw all visible components
-		for(Visible v: viewObjects){
+		for(int i = 0; i< viewObjects.size();i++){
+			Visible v = viewObjects.get(i);
 			g.drawImage(v.getImage(), v.getX(), v.getY(), null);
 		}
 		//		g.setFont(new Font("Helvetica",Font.PLAIN,20));
@@ -94,6 +95,20 @@ public abstract class Screen {
 		 * 			i--;
 		 * 	}
 		 * }
+		 * Also CORRECT
+		 * for(int i = 0; i<list.size();i++){
+		 * while(i<list.size() && list.get(i) > 5) list.remove(i);
+		 * 		
+		 * 	for this reason, the following doesn't even work !
+		 * because remove changes the size !
+		 * for(Integer i : list){
+		 * if(i>5)list.remove(i);
+		 * 
+		 * Finally, if you remove using an index, it returns the removed object
+		 * so you can do this:
+		 * System.out.println(list.remove(0).toString() + 
+		 * " was removed.");
+		 * }
 		 */
 		viewObjects.remove(v);
 		/**
@@ -104,18 +119,30 @@ public abstract class Screen {
 	}
 	public void moveToFront(Visible v){
 		if(viewObjects.contains(v)){
-			// searches if __ contained in the list
 			viewObjects.remove(v);
 			viewObjects.add(v);
 		}
 	}
+
 	public void moveToBack(Visible v){
 		if(viewObjects.contains(v)){
 			viewObjects.remove(v);
 			viewObjects.add(0,v);
-
+			//moves all objects with index >=n
+			//forward by 1, increases size by 1
+			//adds object to index n
 		}
 	}
+
+	public void addObject(Visible v){
+		viewObjects.add(v);
+	}
+
+
+
+
+
+
 
 	public BufferedImage getImage(){
 		return image;
@@ -129,12 +156,13 @@ public abstract class Screen {
 		return null;
 	}
 
-	public void addObject(Visible v) {
-		viewObjects.add(v);
-		
+	public int getWidth(){
+		return width;
 	}
 
-
+	public int getHeight(){
+		return height;
+	}
 
 
 

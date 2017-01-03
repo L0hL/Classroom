@@ -15,18 +15,19 @@ import GUIpractice.Screen;
 import GUIpractice.components.Clickable;
 import GUIpractice.components.Visible;
 
-public abstract class ClickablerScreen extends Screen implements MouseListener {
+public abstract class ClickableScreen extends Screen implements MouseListener {
 
 	private ArrayList<Clickable> clickables;
 	
-	public ClickablerScreen(int width, int height) {
+	public ClickableScreen(int width, int height) {
 		super(width, height);
 		// TODO Auto-generated constructor stub
 	}
 
 	public abstract void initAllObjects(List<Visible> viewObjects);
 	
-	public void initObjects(List<Visible> viewObjects) {
+	@Override
+	public void initObjects(ArrayList<Visible> viewObjects) {
 		initAllObjects(viewObjects);
 		clickables = new ArrayList<Clickable>();
 		for(Visible v: viewObjects){
@@ -47,6 +48,7 @@ public abstract class ClickablerScreen extends Screen implements MouseListener {
 	
 	public void addObject(Visible v){
 		super.addObject(v);
+		
 		if(v instanceof Clickable){
 			clickables.add((Clickable)v);
 		}
