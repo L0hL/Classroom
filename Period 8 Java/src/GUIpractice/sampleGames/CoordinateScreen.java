@@ -10,6 +10,7 @@ import GUIpractice.Screen;
 import GUIpractice.components.Action;
 import GUIpractice.components.Button;
 import GUIpractice.components.Graphics;
+import GUIpractice.components.MovingComponent;
 import GUIpractice.components.TextArea;
 import GUIpractice.components.TextLabel;
 import GUIpractice.components.Visible;
@@ -40,10 +41,16 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 			}
 		});
 		Graphics picture = new Graphics(50,50,.5,"resources/sampleImages/Penguins.jpg");
+		
 		viewObjects.add(picture);
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
 		viewObjects.add(button);
+		
+		MovingComponent mc = new MovingComponent(30, 60, 80, 80);
+		viewObjects.add(mc);
+		mc.setVy(3);
+		mc.play();
 	}
 
 	public void mouseDragged(MouseEvent arg0) {
