@@ -49,6 +49,11 @@ public class MovingComponent extends Component implements Runnable{
 			setY(300);
 			vy*=-1;
 		}
+		if(getY() < 25){
+			setY(25);
+			vy*=-1;
+		}
+		
 		
 	}
 	@Override
