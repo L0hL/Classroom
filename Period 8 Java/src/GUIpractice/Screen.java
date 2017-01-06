@@ -15,7 +15,7 @@ public abstract class Screen {
 
 	private int width;
 	private int height;
-	private ArrayList<GUIpractice.components.Visible> viewObjects;
+	protected ArrayList<GUIpractice.components.Visible> viewObjects;
 
 	protected BufferedImage image;
 
