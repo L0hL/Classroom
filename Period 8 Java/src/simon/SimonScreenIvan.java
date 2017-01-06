@@ -41,6 +41,7 @@ public class SimonScreenIvan extends ClickableScreen implements Runnable {
 	public void changeText(String s){
 		try{
 			Thread.sleep(1000);
+			
 		}catch (InterruptedException e) {								
 			e.printStackTrace();
 		}
