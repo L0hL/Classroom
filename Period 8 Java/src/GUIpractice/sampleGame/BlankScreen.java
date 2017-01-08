@@ -1,9 +1,9 @@
-package GUIpractice.sampleGames;
+package GUIpractice.sampleGame;
 
 import java.util.ArrayList;
 
 import GUIpractice.Screen;
-import GUIpractice.components.Visible;
+import GUIpractice.component.Visible;
 
 public class BlankScreen extends Screen {
 	

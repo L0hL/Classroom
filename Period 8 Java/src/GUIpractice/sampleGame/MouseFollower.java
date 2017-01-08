@@ -1,4 +1,4 @@
-package GUIpractice.sampleGames;
+package GUIpractice.sampleGame;
 
 import GUIpractice.GUIApplication;
 

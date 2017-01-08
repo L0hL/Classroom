@@ -1,4 +1,4 @@
-package GUIpractice.sampleGames;
+package GUIpractice.sampleGame;
 
 import java.awt.event.MouseListener;
 

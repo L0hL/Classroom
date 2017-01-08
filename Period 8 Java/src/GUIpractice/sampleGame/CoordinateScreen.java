@@ -1,4 +1,4 @@
-package GUIpractice.sampleGames;
+package GUIpractice.sampleGame;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
@@ -7,13 +7,13 @@ import java.util.ArrayList;
 
 
 import GUIpractice.Screen;
-import GUIpractice.components.Action;
-import GUIpractice.components.Button;
-import GUIpractice.components.Graphics;
-import GUIpractice.components.MovingComponent;
-import GUIpractice.components.TextArea;
-import GUIpractice.components.TextLabel;
-import GUIpractice.components.Visible;
+import GUIpractice.component.Action;
+import GUIpractice.component.Button;
+import GUIpractice.component.Graphics;
+import GUIpractice.component.MovingComponent;
+import GUIpractice.component.TextArea;
+import GUIpractice.component.TextLabel;
+import GUIpractice.component.Visible;
 
 public class CoordinateScreen extends Screen implements MouseMotionListener{
 

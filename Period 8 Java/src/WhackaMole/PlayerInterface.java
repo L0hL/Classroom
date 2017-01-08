@@ -1,6 +1,6 @@
 package WhackaMole;
 
-import GUIpractice.components.Visible;
+import GUIpractice.component.Visible;
 
 public interface PlayerInterface extends Visible {
 

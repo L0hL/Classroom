@@ -9,13 +9,13 @@ import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-import GUIpractice.components.Visible;
+import GUIpractice.component.Visible;
 
 public abstract class Screen {
 
 	private int width;
 	private int height;
-	protected ArrayList<GUIpractice.components.Visible> viewObjects;
+	protected ArrayList<GUIpractice.component.Visible> viewObjects;
 
 	protected BufferedImage image;
 

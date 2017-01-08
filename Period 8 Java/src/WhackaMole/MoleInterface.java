@@ -1,7 +1,7 @@
 package WhackaMole;
 
-import GUIpractice.components.Action;
-import GUIpractice.components.Clickable;
+import GUIpractice.component.Action;
+import GUIpractice.component.Clickable;
 
 
 public interface MoleInterface extends Clickable {

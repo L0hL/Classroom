@@ -1,4 +1,4 @@
-package GUIpractice.sampleGames;
+package GUIpractice.sampleGame;
 
 public class ThreadExample implements Runnable {
 	

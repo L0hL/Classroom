@@ -1,6 +1,6 @@
-package GUIpractice.sampleGames;
+package GUIpractice.sampleGame;
 
-import GUIpractice.components.Visible;
+import GUIpractice.component.Visible;
 
 public interface Clickable extends Visible{
 	public boolean isHovered(int x, int y);

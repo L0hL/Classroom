@@ -1,4 +1,4 @@
-package GUIpractice.sampleGames;
+package GUIpractice.sampleGame;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -8,12 +8,9 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import GUIpractice.components.Clickable;
-import GUIpractice.components.Visible;
-
 import GUIpractice.Screen;
-import GUIpractice.components.Clickable;
-import GUIpractice.components.Visible;
+import GUIpractice.component.Clickable;
+import GUIpractice.component.Visible;
 
 public abstract class ClickableScreen extends Screen implements MouseListener {
 
