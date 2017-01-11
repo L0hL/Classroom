@@ -6,7 +6,7 @@ import java.util.List;
 import GUIpractice.component.Action;
 import GUIpractice.component.TextLabel;
 import GUIpractice.component.Visible;
-import GUIpractice.sampleGame.ClickableScreen;
+import GUIpractice.ClickableScreen;
 
 
 public class WhackAMoleScreen extends ClickableScreen implements Runnable{
